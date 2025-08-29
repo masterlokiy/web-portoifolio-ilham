@@ -6,6 +6,7 @@ body {
   min-height: 100vh;
   background: #111827; /* dark gray background */
   overflow-x: hidden; /* prevent horizontal scrolling */
+  margin-right: 26px;
 }
 
 /* 3D perspective for interactive effects */
@@ -153,3 +154,4 @@ body {
     height: auto;
   }
 }
+
