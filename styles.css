@@ -6,7 +6,6 @@ body {
   min-height: 100vh;
   background: #111827; /* dark gray background */
   overflow-x: hidden; /* prevent horizontal scrolling */
-  margin-right: 27px;
 }
 
 /* 3D perspective for interactive effects */
@@ -72,7 +71,6 @@ body {
 /* Mobile: reset to normal flow so scrolling works */
 @media screen and (max-width: 1024px) {
   body {
-    display: block;
     padding: 2rem 0;
   }
 }
@@ -154,5 +152,6 @@ body {
     height: auto;
   }
 }
+
 
 
