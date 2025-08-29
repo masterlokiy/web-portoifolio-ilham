@@ -9,15 +9,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
   </head>
-  <body class="relative min-h-screen flex items-center bg-gray-900">
-    <!-- Background -->
-    <div class="fixed inset-0 opacity-40 -z-10">
-      <img
-        src="assets/images/background-1.JPG"
-        alt="Background"
-        class="w-full h-full object-cover"
-      />
-    </div>
+<body class="relative min-h-screen flex items-center bg-gray-900">
+  <!-- Background -->
+  <div 
+    class="fixed inset-0 -z-10 bg-cover bg-center opacity-40"
+    style="background-image: url('assets/images/background-1.JPG');">
+  </div>
+
+  <!-- Konten lain -->
+  <div class="text-white relative z-10">
+  </div>
+</body>
 
     <!-- Main Content -->
     <div
@@ -254,5 +256,6 @@
     </div>
   </body>
 </html>
+
 
 
