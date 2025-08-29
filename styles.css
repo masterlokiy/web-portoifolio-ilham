@@ -1,0 +1,155 @@
+/* ================= DEFAULT (Desktop First) ================= */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #111827; /* dark gray background */
+  overflow-x: hidden; /* prevent horizontal scrolling */
+}
+
+/* 3D perspective for interactive effects */
+.perspective {
+  perspective: 1000px;
+}
+.transform-style {
+  transform-style: preserve-3d;
+}
+
+/* Card/image hover effects */
+.rotate-right:hover {
+  transform: rotateY(8deg) translateZ(20px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.img-hover {
+  transition: all 0.5s ease-in-out;
+}
+.img-hover:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+}
+
+/* Smooth animation for cloned image */
+#cloneImage {
+  transition: top 0.5s ease, left 0.5s ease, width 0.5s ease,
+    height 0.5s ease, transform 1s ease-in-out;
+}
+
+/* Fade-out animation */
+.fade-out {
+  opacity: 0;
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.card-hover:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 18px 3px rgba(255, 255, 255, 0.25);
+}
+
+/* Slight shadow on hover */
+.interactive-card:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Icon container styling */
+.icon-wrapper {
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+/* Mobile: reset to normal flow so scrolling works */
+@media screen and (max-width: 1024px) {
+  body {
+    display: block;
+    padding: 2rem 0;
+  }
+}
+
+/* Tablet (≤1024px) */
+@media screen and (max-width: 1024px) {
+  .main-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .rotate-right:hover {
+    transform: rotateY(5deg) translateZ(10px);
+  }
+
+  .img-hover:hover {
+    transform: scale(1.03);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-5px) scale(1.01);
+  }
+}
+
+/* Mobile (≤768px) */
+@media screen and (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .main-container > div {
+    width: 90%; /* make each card fit better on screen */
+    max-width: 22rem;
+  }
+
+  .icon-wrapper {
+    padding: 0.5rem;
+  }
+
+  .card {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Disable heavy effects for small screens */
+  .rotate-right:hover,
+  .img-hover:hover,
+  .card-hover:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* Extra Small Mobile (≤480px) */
+@media screen and (max-width: 480px) {
+  .icon-wrapper {
+    padding: 0.3rem;
+    border-radius: 0.4rem;
+  }
+
+  .card {
+    padding: 0.3rem;
+    border-radius: 0.4rem;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

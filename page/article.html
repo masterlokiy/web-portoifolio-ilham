@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Scientific Articles | Ilhamme</title>
+    <link rel="stylesheet" href="/src/css/article.css" />
+    <script src="/src/js/article.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+
+  <body class="min-h-screen text-white overflow-x-hidden bg-gray-900">
+    <div class="fixed inset-0 opacity-40 -z-10">
+      <img
+        src="/assets/images/background-1.JPG"
+        alt="Background"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <div
+      class="vertical-menu flex flex-col items-center space-y-5 fixed left-6 top-1/2 transform -translate-y-1/2 z-30"
+    >
+      <a
+        href="../index.html"
+        class="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-b from-white/20 to-white/5 backdrop-blur-md border border-white/20 shadow-md transition-all duration-500 ease-in-out hover:scale-110 hover:shadow-[0_0_20px_rgba(255,255,255,0.3),0_0_40px_rgba(255,255,255,0.2)] group relative"
+      >
+        <i data-lucide="arrow-left" class="w-5 h-5"></i>
+        <span
+          class="absolute left-full ml-3 px-2 py-1 bg-gray-800 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        >
+          Back to Home
+        </span>
+      </a>
+
+      <div class="relative group">
+        <button
+          id="sortBtn"
+          onclick="toggleSortDropdown()"
+          class="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-b from-white/20 to-white/5 backdrop-blur-md border border-white/20 shadow-md transition-all duration-500 ease-in-out hover:scale-110 hover:shadow-[0_0_20px_rgba(255,255,255,0.3),0_0_40px_rgba(255,255,255,0.2)]"
+        >
+          <i data-lucide="arrow-up-down" class="w-5 h-5"></i>
+        </button>
+        <span
+          class="absolute left-full top-1/2 -translate-y-1/2 ml-3 px-2 py-1 bg-gray-800 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none group-hover:scale-110 origin-left"
+        >
+          Sort Articles
+        </span>
+
+        <div
+          id="sortDropdown"
+          class="absolute left-full ml-3 mt-2 w-48 origin-top-left dropdown rounded-xl shadow-lg z-50 opacity-0 invisible transition-all duration-300 bg-gradient-to-b from-white/20 to-white/5 backdrop-blur-md border border-white/20"
+        >
+          <div class="py-1">
+            <button
+              onclick="toggleSort('date-desc')"
+              class="w-full text-left px-4 py-2 text-sm hover:bg-white/10 transition-colors flex items-center sort-option"
+              data-value="date-desc"
+            >
+              <i data-lucide="calendar" class="w-4 h-4 mr-2"></i> Newest First
+            </button>
+            <button
+              onclick="toggleSort('date-asc')"
+              class="w-full text-left px-4 py-2 text-sm hover:bg-white/10 transition-colors flex items-center sort-option"
+              data-value="date-asc"
+            >
+              <i data-lucide="calendar" class="w-4 h-4 mr-2"></i> Oldest First
+            </button>
+            <button
+              onclick="toggleSort('name-asc')"
+              class="w-full text-left px-4 py-2 text-sm hover:bg-white/10 transition-colors flex items-center sort-option"
+              data-value="name-asc"
+            >
+              <i data-lucide="a-z" class="w-4 h-4 mr-2"></i> Name (A-Z)
+            </button>
+            <button
+              onclick="toggleSort('name-desc')"
+              class="w-full text-left px-4 py-2 text-sm hover:bg-white/10 transition-colors flex items-center sort-option"
+              data-value="name-desc"
+            >
+              <i data-lucide="z-a" class="w-4 h-4 mr-2"></i> Name (Z-A)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative group">
+        <button
+          id="filterBtn"
+          onclick="toggleFilterDropdown()"
+          class="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-b from-white/20 to-white/5 backdrop-blur-md border border-white/20 shadow-md transition-all duration-500 ease-in-out hover:scale-110 hover:shadow-[0_0_20px_rgba(255,255,255,0.3),0_0_40px_rgba(255,255,255,0.2)]"
+        >
+          <i data-lucide="filter" class="w-5 h-5"></i>
+        </button>
+        <span
+          class="absolute left-full top-1/2 -translate-y-1/2 ml-3 px-2 py-1 bg-gray-800 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none group-hover:scale-110 origin-left"
+        >
+          Filter by Category
+        </span>
+
+        <div
+          id="filterDropdown"
+          class="absolute left-full ml-3 mt-2 w-48 origin-top-left dropdown rounded-xl shadow-lg z-50 opacity-0 invisible transition-all duration-300 bg-gradient-to-b from-white/20 to-white/5 backdrop-blur-md border border-white/20"
+        >
+          <div class="py-1">
+            <button
+              onclick="toggleCategory('Data Science')"
+              class="w-full text-left px-4 py-2 text-sm hover:bg-white/10 transition-colors flex items-center filter-option"
+              data-value="Data Science"
+            >
+              <span>Data Science</span>
+            </button>
+            <button
+              onclick="toggleCategory('Machine Learning')"
+              class="w-full text-left px-4 py-2 text-sm hover:bg-white/10 transition-colors flex items-center filter-option"
+              data-value="Machine Learning"
+            >
+              <span>Machine Learning</span>
+            </button>
+            <button
+              onclick="toggleCategory('Computer Vision')"
+              class="w-full text-left px-4 py-2 text-sm hover:bg-white/10 transition-colors flex items-center filter-option"
+              data-value="Computer Vision"
+            >
+              <span>Computer Vision</span>
+            </button>
+            <button
+              onclick="toggleCategory('AI Research')"
+              class="w-full text-left px-4 py-2 text-sm hover:bg-white/10 transition-colors flex items-center filter-option"
+              data-value="AI Research"
+            >
+              <span>AI Research</span>
+            </button>
+            <button
+              onclick="toggleCategory('Neural Networks')"
+              class="w-full text-left px-4 py-2 text-sm hover:bg-white/10 transition-colors flex items-center filter-option"
+              data-value="Neural Networks"
+            >
+              <span>Neural Networks</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="fixed right-6 top-1/2 transform -translate-y-1/2 z-30 flex flex-col items-center space-y-5"
+    >
+      <a
+        href="project.html"
+        class="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-b from-white/20 to-white/5 backdrop-blur-md border border-white/20 shadow-md transition-all duration-500 ease-in-out hover:scale-110 hover:shadow-[0_0_20px_rgba(255,255,255,0.3),0_0_40px_rgba(255,255,255,0.2)] group relative"
+      >
+        <i data-lucide="code" class="w-6 h-6"></i>
+        <span
+          class="absolute right-full mr-3 px-2 py-1 bg-gray-800 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        >
+          Project
+        </span>
+      </a>
+
+      <a
+        href="experience.html"
+        class="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-b from-white/20 to-white/5 backdrop-blur-md border border-white/20 shadow-md transition-all duration-500 ease-in-out hover:scale-110 hover:shadow-[0_0_20px_rgba(255,255,255,0.3),0_0_40px/rgba(255,255,255,0.2)] group relative"
+      >
+        <i data-lucide="briefcase" class="w-6 h-6"></i>
+        <span
+          class="absolute right-full mr-3 px-2 py-1 bg-gray-800 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        >
+          Experience
+        </span>
+      </a>
+
+      <a
+        href="article.html"
+        class="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-b from-white/20 to-white/5 backdrop-blur-md border border-white/20 shadow-md transition-all duration-500 ease-in-out hover:scale-110 hover:shadow-[0_0_20px_rgba(255,255,255,0.3),0_0_40px/rgba(255,255,255,0.2)] group relative active-purple"
+      >
+        <i data-lucide="file-text" class="w-6 h-6"></i>
+        <span
+          class="absolute right-full mr-3 px-2 py-1 bg-gray-800 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        >
+          Articles
+        </span>
+      </a>
+
+      <a
+        href="certification.html"
+        class="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-b from-white/20 to-white/5 backdrop-blur-md border border-white/20 shadow-md transition-all duration-500 ease-in-out hover:scale-110 hover:shadow-[0_0_20px/rgba(255,255,255,0.3),0_0_40px/rgba(255,255,255,0.2)] group relative"
+      >
+        <i data-lucide="award" class="w-6 h-6"></i>
+        <span
+          class="absolute right-full mr-3 px-2 py-1 bg-gray-800 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        >
+          Certifications
+        </span>
+      </a>
+    </div>
+
+    <nav class="relative z-10 py-4 px-6 flex justify-center items-center">
+      <h3 class="text-2xl font-bold tracking-wide mb-2 relative z-10">
+        My Scientific Articles
+      </h3>
+    </nav>
+
+    <div class="articles-container pb-12 mt-8 mx-auto max-w-6xl px-4">
+      <div id="articlesGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Articles will be rendered here -->
+      </div>
+    </div>
+
+    <!-- Modal for article details -->
+    <div id="articleModal" class="modal-overlay">
+      <div class="modal-content">
+        <button
+          class="absolute top-4 right-4 text-gray-400 hover:text-white"
+          onclick="closeModal()"
+        >
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <div id="modalContent" class="p-4">
+          <!-- Modal content will be populated here -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

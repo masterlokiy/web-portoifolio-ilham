@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ilhamme</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body class="relative min-h-screen flex items-center bg-gray-900">
+    <!-- Background -->
+    <div class="fixed inset-0 opacity-40 -z-10">
+      <img
+        src="assets/images/background-1.JPG"
+        alt="Background"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <!-- Main Content -->
+    <div
+      class="main-container relative z-10 flex flex-wrap gap-6 justify-center perspective"
+    >
+      <!-- Left Column (Profile) -->
+      <div class="flex flex-col space-y-6 transform-style">
+        <div
+          class="w-72 h-[37.5rem] bg-gradient-to-b from-white/20 to-white/5 backdrop-blur-md border border-white/20 rounded-2xl shadow-md flex flex-col items-center pt-5 px-5 pb-6 transition-all duration-500 ease-in-out rotate-right hover:shadow-[0_0_20px_rgba(255,255,255,0.3),0_0_40px_rgba(255,255,255,0.2)]"
+          <!--
+          Profile
+          photo
+          --
+        >
+          <div class="h-1/2 w-full rounded-2xl overflow-hidden shadow-md mb-5">
+            <img
+              id="profileImage"
+              src="assets/images/profil-1.jpg"
+              alt="Profile Photo"
+              class="w-full h-full object-cover rounded-2xl transition-transform duration-500 ease-in-out img-hover cursor-pointer"
+            />
+          </div>
+
+          <!-- Name & description -->
+          <div class="text-center text-white">
+            <h2 class="text-2xl font-semibold tracking-wide">Ilham Cahyo</h2>
+            <p class="text-sm mt-2 text-gray-200 leading-relaxed">
+              Student with an interest in Data Science and Machine Learning /
+              AI.
+            </p>
+          </div>
+
+          <!-- Divider -->
+          <div class="w-16 h-0.5 bg-white/40 my-5"></div>
+
+          <!-- Social Media Icons -->
+          <div class="flex space-x-4">
+            <!-- GitHub -->
+            <a
+              href="https://github.com/masterlokiy"
+              target="_blank"
+              class="hover:scale-110 transition-transform duration-300"
+            >
+              <img
+                src="assets/icon/github-142-svgrepo-com.svg"
+                alt="GitHub"
+                class="w-6 h-6 filter invert"
+              />
+            </a>
+
+            <!-- LinkedIn -->
+            <a
+              href="https://www.linkedin.com/in/ilham-cahyo-saputro-wibowo-08315a2b2/"
+              target="_blank"
+              class="hover:scale-110 transition-transform duration-300"
+            >
+              <img
+                src="assets/icon/linkedin-svgrepo-com.svg"
+                alt="LinkedIn"
+                class="w-6 h-6"
+              />
+            </a>
+
+            <!-- Instagram -->
+            <a
+              href="https://instagram.com/ilhamnw.e"
+              target="_blank"
+              class="hover:scale-110 transition-transform duration-300"
+            >
+              <img
+                src="assets/icon/instagram-svgrepo-com.svg"
+                alt="Instagram"
+                class="w-6 h-6"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Middle Column -->
+      <div class="flex flex-col space-y-6 transform-style">
+        <!-- Project -->
+        <div
+          onclick="window.location.href='page/project.html'"
+          class="group w-72 h-72 bg-gradient-to-b from-white/20 to-white/5 backdrop-blur-md border border-white/20 rounded-2xl shadow-md text-white text-center p-6 flex flex-col justify-center items-center transition-all duration-700 hover:scale-105 cursor-pointer relative overflow-hidden hover:shadow-[0_0_20px_rgba(255,255,255,0.3),0_0_40px_rgba(255,255,255,0.2)]"
+        >
+          <!-- Particle container -->
+          <div class="particles absolute inset-0 overflow-hidden"></div>
+
+          <!-- Gradient overlay on hover -->
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+          ></div>
+
+          <div
+            class="icon-wrapper relative z-10 flex items-center justify-center"
+          >
+            <i
+              data-lucide="code"
+              class="w-10 h-10 text-white duration-700 group-hover:scale-110 group-hover:text-blue-300"
+            ></i>
+          </div>
+
+          <h3
+            class="text-2xl font-semibold mb-2 relative z-10 group-hover:text-blue-200 transition-colors duration-500"
+          >
+            Project
+          </h3>
+          <p
+            class="text-sm text-gray-200 relative z-10 group-hover:text-white transition-colors duration-500"
+          >
+            Collection of best projects
+          </p>
+        </div>
+
+        <!-- Article -->
+        <div
+          onclick="window.location.href='page/article.html'"
+          class="group w-72 h-72 bg-gradient-to-b from-white/20 to-white/5 backdrop-blur-md border border-white/20 rounded-2xl shadow-md text-white text-center p-6 flex flex-col justify-center items-center transition-all duration-700 hover:scale-105 cursor-pointer relative overflow-hidden hover:shadow-[0_0_20px_rgba(255,255,255,0.3),0_0_40px_rgba(255,255,255,0.2)]"
+        >
+          <!-- Particle container -->
+          <div class="particles absolute inset-0 overflow-hidden"></div>
+
+          <!-- Gradient overlay hover (purple-pink) -->
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+          ></div>
+
+          <div
+            class="icon-wrapper relative z-10 flex items-center justify-center"
+          >
+            <i
+              data-lucide="file-text"
+              class="w-10 h-10 text-white duration-700 group-hover:scale-110 group-hover:text-pink-300"
+            ></i>
+          </div>
+
+          <h3
+            class="text-2xl font-semibold mb-2 relative z-10 group-hover:text-pink-200 transition-colors duration-500"
+          >
+            Article
+          </h3>
+          <p
+            class="text-sm text-gray-200 relative z-10 group-hover:text-white transition-colors duration-500"
+          >
+            Selected writings collection
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="flex flex-col space-y-6 transform-style">
+        <!-- Experience -->
+        <div
+          onclick="window.location.href='page/experience.html'"
+          class="group w-72 h-72 bg-gradient-to-b from-white/20 to-white/5 backdrop-blur-md border border-white/20 rounded-2xl shadow-md text-white text-center p-6 flex flex-col justify-center items-center transition-all duration-700 hover:scale-105 cursor-pointer relative overflow-hidden hover:shadow-[0_0_20px_rgba(255,255,255,0.3),0_0_40px_rgba(255,255,255,0.2)]"
+        >
+          <div class="particles absolute inset-0 overflow-hidden"></div>
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-green-500/10 to-lime-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+          ></div>
+
+          <div
+            class="icon-wrapper relative z-10 flex items-center justify-center"
+          >
+            <i
+              data-lucide="briefcase"
+              class="w-10 h-10 text-white duration-700 group-hover:scale-110 group-hover:text-green-300"
+            ></i>
+          </div>
+
+          <h3
+            class="text-2xl font-semibold mb-2 relative z-10 group-hover:text-green-200 transition-colors duration-500"
+          >
+            Experience
+          </h3>
+          <p
+            class="text-sm text-gray-200 relative z-10 group-hover:text-white transition-colors duration-500"
+          >
+            Creative & technical experience
+          </p>
+        </div>
+
+        <!-- Certification -->
+        <div
+          onclick="window.location.href='page/certification.html'"
+          class="group w-72 h-72 bg-gradient-to-b from-white/20 to-white/5 backdrop-blur-md border border-white/20 rounded-2xl shadow-md text-white text-center p-6 flex flex-col justify-center items-center transition-all duration-700 hover:scale-105 cursor-pointer relative overflow-hidden hover:shadow-[0_0_20px_rgba(255,255,255,0.3),0_0_40px_rgba(255,255,255,0.2)]"
+          <!--
+          Particle
+          container
+          --
+        >
+          <div class="particles absolute inset-0 overflow-hidden"></div>
+
+          <!-- Hover gradient overlay (yellow) -->
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-yellow-300/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+          ></div>
+
+          <!-- Icon -->
+          <div
+            class="icon-wrapper relative z-10 flex items-center justify-center"
+          >
+            <i
+              data-lucide="award"
+              class="w-10 h-10 text-white duration-700 group-hover:scale-110 group-hover:text-yellow-300"
+            ></i>
+          </div>
+
+          <!-- Title -->
+          <h3
+            class="text-2xl font-semibold mb-2 relative z-10 group-hover:text-yellow-200 transition-colors duration-500"
+          >
+            Certification
+          </h3>
+
+          <!-- Description -->
+          <p
+            class="text-sm text-gray-200 relative z-10 group-hover:text-white transition-colors duration-500"
+          >
+            Professional recognition
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clone animation modal -->
+    <div id="modalClone" class="fixed inset-0 z-50 pointer-events-none">
+      <div
+        id="modalOverlay"
+        class="absolute inset-0 bg-black/70 backdrop-blur-sm opacity-0 transition-opacity duration-300"
+      ></div>
+      <img id="cloneImage" src="" class="absolute rounded-xl shadow-2xl" />
+    </div>
+  </body>
+</html>
