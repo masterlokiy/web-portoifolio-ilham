@@ -60,6 +60,7 @@ body {
   padding: 1rem;
   margin-bottom: 1rem;
   transition: transform 0.3s ease;
+  backdrop-filter: blur(5px);
   overflow: hidden;
 }
 
@@ -174,6 +175,7 @@ body {
     height: auto;
   }
 }
+
 
 
 
