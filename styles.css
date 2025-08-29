@@ -7,15 +7,6 @@ body {
   background: #111827; /* dark gray background */
   overflow-x: hidden; /* prevent horizontal scrolling */
 }
-
-.bg-custom {
-  background-image: url("assets/images/background-1.JPG");
-  background-size: cover;      /* supaya menutup layar penuh */
-  background-position: center; /* biar fokus di tengah */
-  background-repeat: no-repeat;
-  opacity: 0.4;                /* efek transparansi */
-}
-
 /* 3D perspective for interactive effects */
 .perspective {
   perspective: 1000px;
@@ -184,4 +175,5 @@ body {
     height: auto;
   }
 }
+
 
