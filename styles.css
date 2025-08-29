@@ -32,8 +32,8 @@ body {
 
 /* Smooth animation for cloned image */
 #cloneImage {
-  transition: top 0.5s ease, left 0.5s ease, width 0.5s ease,
-    height 0.5s ease, transform 1s ease-in-out;
+  transition: top 0.5s ease, left 0.5s ease, width 0.5s ease, height 0.5s ease,
+    transform 1s ease-in-out;
 }
 
 /* Fade-out animation */
@@ -65,13 +65,19 @@ body {
   overflow: hidden;
 }
 
-
 /* ================= RESPONSIVE ================= */
 
 /* Mobile: reset to normal flow so scrolling works */
 @media screen and (max-width: 1024px) {
   body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     padding: 2rem 0;
+  }
+  
+  .main-container {
+    width: 100%;
   }
 }
 
@@ -81,6 +87,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.5rem;
+    margin: 0 auto;
   }
 
   .rotate-right:hover {
@@ -98,15 +105,27 @@ body {
 
 /* Mobile (≤768px) */
 @media screen and (max-width: 768px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
   .main-container {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 1.25rem;
+    width: 100%;
+    padding: 0 1rem;
   }
 
   .main-container > div {
-    width: 90%; /* make each card fit better on screen */
-    max-width: 22rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 22rem; /* make each card fit better on screen */
   }
 
   .icon-wrapper {
@@ -119,6 +138,7 @@ body {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
     transition: transform 0.3s ease;
+    width: 100%;
   }
 
   .card:hover {
@@ -137,6 +157,10 @@ body {
 
 /* Extra Small Mobile (≤480px) */
 @media screen and (max-width: 480px) {
+  .main-container {
+    padding: 0 0.5rem;
+  }
+  
   .icon-wrapper {
     padding: 0.3rem;
     border-radius: 0.4rem;
@@ -152,6 +176,3 @@ body {
     height: auto;
   }
 }
-
-
-
