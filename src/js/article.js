@@ -400,7 +400,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     rightMenu.style.right = "0";
     rightMenu.style.transform = "translateX(5000%)";
-    rightMenu.style.backdropFilter = "blur(10px)";
     rightMenu.style.maxWidth = "100%";
     rightMenu.style.transition = "transform 0.5s ease";
     rightMenu.style.zIndex = "40";
@@ -434,3 +433,4 @@ document.addEventListener("DOMContentLoaded", function () {
   checkScreenSize();
   window.addEventListener("resize", checkScreenSize);
 });
+
