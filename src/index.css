@@ -2,19 +2,20 @@
 
 @font-face {
   font-family: "GT Walsheim";
-  src: url("assets/fonts/GT Walsheim Font/GT-Walsheim-Regular-Oblique-Trial-BF651b7fc67342f.otf");
+  src: url("../assets/fonts/GT Walsheim Font/GT-Walsheim-Regular-Oblique-Trial-BF651b7fc67342f.otf") format("opentype");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
   font-family: "GT Walsheim";
-  src: url("assets/fonts/GT Walsheim Font/GT-Walsheim-Bold-Oblique-Trial-BF651b7fc5f06a0.otf");
+  src: url("../assets/fonts/GT Walsheim Font/GT-Walsheim-Bold-Oblique-Trial-BF651b7fc5f06a0.otf") format("opentype");
   font-weight: 700;
   font-style: italic;
 }
 
 @layer base {
+
   *,
   *::before,
   *::after {
@@ -86,7 +87,7 @@
     filter: blur(0.3px);
   }
 
-  nav > * {
+  nav>* {
     position: relative;
     z-index: 1;
   }
@@ -174,6 +175,7 @@
   }
 
   @keyframes timeline-pulse-active {
+
     0%,
     100% {
       transform: scale(1.15);
@@ -304,6 +306,7 @@
   }
 
   @keyframes highlight-progress {
+
     0%,
     6% {
       width: 0%;
@@ -321,6 +324,7 @@
   }
 
   @keyframes music-button-pulse {
+
     0%,
     100% {
       transform: scale(1);
