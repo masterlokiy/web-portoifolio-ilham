@@ -196,8 +196,9 @@ const About = () => {
                 <div className="mt-4 sm:mt-6 border-t border-[#d8d4cc] pt-3 sm:pt-4">
                   <div className="flex items-center">
                     <a
-                      href="/cv.pdf"
-                      download
+                      href="https://drive.google.com/file/d/1_gQVoXU8Mh9AgHc-I-FUDVECoYaojV6K/view?usp=drive_link"
+                      target="_blank"
+                      rel="noreferrer"
                       className="inline-flex shrink-0 items-center gap-1 rounded-full border-2 border-transparent bg-[#fc731f] px-3 py-1.5 text-xs font-medium text-white transition-all duration-200 hover:border-[#fc731f] hover:bg-[#f5f4f1] hover:text-[#333333]"
                     >
                       Download CV
