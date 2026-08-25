@@ -2,14 +2,28 @@
 
 @font-face {
   font-family: "GT Walsheim";
-  src: url("assets/fonts/GT Walsheim Font/GT-Walsheim-Regular-Oblique-Trial-BF651b7fc67342f.otf");
+  src: url("../assets/fonts/GT Walsheim Font/GT-Walsheim-Regular-Trial-BF651b7fc71a47d.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Walsheim";
+  src: url("../assets/fonts/GT Walsheim Font/GT-Walsheim-Bold-Trial-BF651b7fc737c57.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Walsheim";
+  src: url("../assets/fonts/GT Walsheim Font/GT-Walsheim-Regular-Oblique-Trial-BF651b7fc67342f.otf") format("opentype");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
   font-family: "GT Walsheim";
-  src: url("assets/fonts/GT Walsheim Font/GT-Walsheim-Bold-Oblique-Trial-BF651b7fc5f06a0.otf");
+  src: url("../assets/fonts/GT Walsheim Font/GT-Walsheim-Bold-Oblique-Trial-BF651b7fc5f06a0.otf") format("opentype");
   font-weight: 700;
   font-style: italic;
 }
