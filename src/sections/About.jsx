@@ -1,9 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import journey from "@/data/journey";
-import gmailLogo from "@assets/images/logo/Gmail_idrA5FDGTH_0.svg";
-import githubLogo from "@assets/images/logo/github-142-svgrepo-com.svg";
-import linkedinLogo from "@assets/images/logo/linkedin-svgrepo-com.svg";
-import instagramLogo from "@assets/images/logo/instagram-1-svgrepo-com.svg";
 import bandageIcon from "@assets/images/icons/bandage-svgrepo-com.svg";
 import eraserIcon from "@assets/images/icons/eraser-svgrepo-com.svg";
 import paperPlaneIcon from "@assets/images/icons/paper-plane-svgrepo-com.svg";
@@ -11,17 +7,6 @@ import pencilIcon from "@assets/images/icons/pencil-svgrepo-com.svg";
 import paperTornBorder from "@assets/images/picture/Paper-torn-border.webp";
 import picProfile from "@assets/images/picture/pic-profile.webp";
 import Certification from "./Certification";
-
-const socialLinks = [
-  { label: "Gmail", href: "mailto:icahyosw@gmail.com", icon: gmailLogo },
-  { label: "GitHub", href: "https://github.com/masterlokiy", icon: githubLogo },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/ilhammnw-e", icon: linkedinLogo },
-  {
-    label: "Instagram",
-    href: "https://www.instagram.com/ilhamnw.e/",
-    icon: instagramLogo,
-  },
-];
 
 const About = () => {
   const aboutRef = useRef(null);
@@ -209,7 +194,7 @@ const About = () => {
                 </div>
 
                 <div className="mt-4 sm:mt-6 border-t border-[#d8d4cc] pt-3 sm:pt-4">
-                  <div className="flex flex-nowrap items-center gap-2">
+                  <div className="flex items-center">
                     <a
                       href="/cv.pdf"
                       download
@@ -217,22 +202,6 @@ const About = () => {
                     >
                       Download CV
                     </a>
-                    {socialLinks.map((social) => (
-                      <a
-                        key={social.label}
-                        href={social.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label={social.label}
-                        className="flex h-7.5 w-7.5 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-full border border-[#d8d4cc] text-[#555555] transition-colors hover:border-[#fc731f] hover:text-[#fc731f]"
-                      >
-                        <img
-                          src={social.icon}
-                          alt=""
-                          className="h-3.5 w-3.5 sm:h-4 sm:w-4 object-contain"
-                        />
-                      </a>
-                    ))}
                   </div>
                 </div>
               </div>
