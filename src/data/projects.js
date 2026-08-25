@@ -1,5 +1,5 @@
 import lumaImage from "@assets/images/project_images/luma.webp";
-import plddueImage from "@assets/images/project_images/plddue.webp";
+import plddueImage from "@assets/images/project_images/PLDDUE.webp";
 import pawonbutomoImage from "@assets/images/project_images/pawonbutomo.webp";
 
 const projects = [
