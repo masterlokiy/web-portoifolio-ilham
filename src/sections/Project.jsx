@@ -51,7 +51,7 @@ const ProjectCardItem = ({ project, isOdd, isFlipped, onToggleFlip }) => {
           } ${isFlipped ? "pointer-events-none select-none invisible" : "pointer-events-auto visible"}`}
         >
           <div
-            className="pointer-events-none absolute inset-0 z-10 opacity-70 mix-blend-multiply"
+            className="pointer-events-none absolute inset-0 z-10 opacity-30 mix-blend-multiply"
             style={{
               backgroundImage: `url(${noiseTexture})`,
               backgroundSize: "cover",
@@ -108,7 +108,7 @@ const ProjectCardItem = ({ project, isOdd, isFlipped, onToggleFlip }) => {
           }`}
         >
           <div
-            className="pointer-events-none absolute inset-0 z-10 opacity-70 mix-blend-multiply"
+            className="pointer-events-none absolute inset-0 z-10 opacity-30 mix-blend-multiply"
             style={{
               backgroundImage: `url(${noiseTexture})`,
               backgroundSize: "cover",

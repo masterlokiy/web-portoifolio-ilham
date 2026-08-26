@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import video from "@assets/video/sherlockholmes.webm";
 import Squiggle1 from "@assets/images/svg/Squiggle_Leave_1.svg";
 import Squiggle2 from "@assets/images/svg/Squiggle_Leave_2.svg";
-import noiseTexture from "@assets/images/texture/noise-texture.png";
 
 const images1 = Object.values(
   import.meta.glob("../../assets/images/bg-pencapaian/*.{jpg,jpeg,png,webp}", {
@@ -43,7 +42,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative z-0 min-h-screen flex flex-col items-center px-6 md:px-16 pt-20 md:pt-28 overflow-visible"
+      className="sticky top-0 z-0 min-h-screen flex flex-col items-center px-6 md:px-16 pt-20 md:pt-28 overflow-visible"
     >
       <div className="relative w-full max-w-5xl mx-auto text-center will-change-transform">
         <br />
@@ -74,22 +73,13 @@ const Hero = () => {
               <div
                 className="
                   absolute inset-0 
-                  bg-[#f5f4f1]/80 backdrop-blur-xl
+                  bg-white
                   rounded-3xl 
-                  border border-white/30
-                  shadow-[0_10px_40px_rgba(0,0,0,0.15)]
+                  border border-[#dedbd4]
+                  shadow-[0_10px_40px_rgba(0,0,0,0.08)]
                   overflow-hidden
                 "
-              >
-                <div
-                  className="pointer-events-none absolute inset-0 z-10 opacity-70 mix-blend-multiply"
-                  style={{
-                    backgroundImage: `url(${noiseTexture})`,
-                    backgroundSize: "cover",
-                    filter: "blur(0.2px)",
-                  }}
-                />
-              </div>
+              />
 
               <div
                 className="
@@ -140,22 +130,13 @@ const Hero = () => {
               <div
                 className="
                   absolute inset-0 
-                  bg-[#f5f4f1]/80 backdrop-blur-xl
+                  bg-white
                   rounded-2xl 
-                  border border-white/30
-                  shadow-[0_10px_40px_rgba(0,0,0,0.15)]
+                  border border-[#dedbd4]
+                  shadow-[0_10px_40px_rgba(0,0,0,0.08)]
                   overflow-hidden
                 "
-              >
-                <div
-                  className="pointer-events-none absolute inset-0 z-10 opacity-70 mix-blend-multiply"
-                  style={{
-                    backgroundImage: `url(${noiseTexture})`,
-                    backgroundSize: "cover",
-                    filter: "blur(0.2px)",
-                  }}
-                />
-              </div>
+              />
 
               <div className="relative z-20 p-2 rounded-2xl flex-1 overflow-hidden">
                 <img

@@ -280,7 +280,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="relative z-10 -mt-px w-full overflow-hidden leading-0">
+      <div className="relative z-10 -mt-px w-full overflow-hidden leading-0 bg-[#f5f4f1]">
         <img
           src={paperTornBorder}
           alt=""

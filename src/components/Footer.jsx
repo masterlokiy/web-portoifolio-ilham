@@ -40,7 +40,7 @@ const Footer = () => {
 
         <div className="flex flex-col items-center sm:items-end gap-2">
           <span className="text-xs sm:text-sm font-medium text-[#777777]">
-            Let's get in touch
+            Let&apos;s connect
           </span>
           <div className="flex items-center gap-2">
             {socialLinks.map((social) => (

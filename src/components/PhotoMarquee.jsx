@@ -25,7 +25,7 @@ const PhotoMarquee = () => {
     <section id="memories" className="texture-paper relative z-10 w-full bg-[#f5f4f1] pt-10 pb-16 md:pt-14 md:pb-24 overflow-hidden select-none">
       <div className="text-center mb-6 md:mb-8 px-4">
         <p className="text-sm md:text-base font-medium text-[#6b6b6b]">
-          Every memory I make
+          Every memory I made
         </p>
       </div>
 
@@ -45,7 +45,7 @@ const PhotoMarquee = () => {
                   className="relative p-2.5 pb-7 sm:p-3 sm:pb-9 md:p-3.5 md:pb-11 bg-white rounded-xl border border-[#dedbd4] shadow-[0_6px_20px_rgba(0,0,0,0.06),0_12px_32px_rgba(0,0,0,0.04)] transition-all duration-300 group-hover:rotate-0 group-hover:scale-105 group-hover:border-[#fc731f] group-hover:shadow-[0_16px_36px_rgba(252,115,31,0.15)]"
                 >
                   <div
-                    className="pointer-events-none absolute inset-0 z-10 opacity-70 mix-blend-multiply rounded-xl"
+                    className="pointer-events-none absolute inset-0 z-10 opacity-30 mix-blend-multiply rounded-xl"
                     style={{
                       backgroundImage: `url(${noiseTexture})`,
                       backgroundSize: "cover",
