@@ -107,6 +107,42 @@ const projects = [
     tools: ["Godot Engine", "GDScript", "2D Game Dev", "Pixel Art"],
     link: "https://krissedu.itch.io/luma",
   },
+  {
+    id: "07",
+    year: "2025",
+    title: "Analysis Bike Rental",
+    category: "Data Analysis Dashboard",
+    period: "2025",
+    tags: ["data"],
+    description:
+      "Interactive dashboard for exploring bike rental patterns, user behavior, seasonal trends, and anomalies using Python and Streamlit.",
+    details: [
+      "Performed RFM analysis to examine casual and registered user behavior.",
+      "Analyzed rental patterns by season, weather, working day, hour, and time of day.",
+      "Identified daily rental anomalies and weekly rental trends through interactive visualizations.",
+    ],
+    image: "",
+    tools: ["Python", "Pandas", "Matplotlib", "Seaborn", "Streamlit"],
+    link: "https://dicodingilhamme.streamlit.app/",
+  },
+  {
+    id: "08",
+    year: "2023",
+    title: "Smart Home Automation",
+    category: "IoT Project",
+    period: "Oct 2023 - Dec 2023",
+    tags: ["iot"],
+    description:
+      "IoT-based smart home system using ESP32, IFTTT, and Google Assistant to control household appliances through voice commands and automated triggers.",
+    details: [
+      "Integrated ESP32 with household appliances for smart control.",
+      "Configured IFTTT automation workflows and Google Assistant voice commands.",
+      "Implemented automated triggers for lights and fans.",
+    ],
+    image: "",
+    tools: ["ESP32", "IFTTT", "Google Assistant", "IoT"],
+    link: "",
+  },
 ];
 
 export default projects;
