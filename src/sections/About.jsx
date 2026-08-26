@@ -77,20 +77,14 @@ const About = () => {
     };
   }, []);
 
-  const wave = (
-    <div className="relative z-10 -mb-3 -translate-y-3 w-full overflow-hidden leading-0">
-      <img
-        src={paperTornBorder}
-        alt=""
-        className="block w-full scale-[1.01] brightness-0 invert h-auto"
-      />
-    </div>
-  );
-
   return (
-    <section ref={aboutRef} id="about" className="relative z-10 w-full">
-      <div className="relative z-10 -mb-px w-full overflow-hidden leading-0">
-        {wave}
+    <section ref={aboutRef} id="about" className="relative z-10 w-full overflow-hidden">
+      <div className="relative z-10 -mb-2 w-full overflow-hidden leading-0 select-none pointer-events-none">
+        <img
+          src={paperTornBorder}
+          alt=""
+          className="block w-[106%] max-w-none -ml-[3%] brightness-0 invert h-auto"
+        />
       </div>
 
       <div
@@ -280,11 +274,11 @@ const About = () => {
         </div>
       </div>
 
-      <div className="relative z-10 -mt-px w-full overflow-hidden leading-0 bg-[#f5f4f1]">
+      <div className="relative z-10 -mt-2 w-full overflow-hidden leading-0 bg-[#f5f4f1] select-none pointer-events-none">
         <img
           src={paperTornBorder}
           alt=""
-          className="block w-full brightness-0 invert h-auto rotate-180"
+          className="block w-[106%] max-w-none -ml-[3%] brightness-0 invert h-auto rotate-180"
         />
       </div>
     </section>
