@@ -122,7 +122,7 @@ const Navbar = () => {
       >
         <nav
           className={`px-3 py-1.5 md:px-4 md:py-2 rounded-full 
-          bg-[#f5f4f1]/85 backdrop-blur-md
+          bg-[#f5f4f1]
           border border-black/10
           shadow-[0_8px_30px_rgba(0,0,0,0.08)]
           transition-all duration-500 flex items-center gap-1 md:gap-2

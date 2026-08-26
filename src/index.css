@@ -151,6 +151,7 @@
   }
 
   .texture-paper,
+  .music-player-btn,
   #projects,
   #certifications,
   #memories,
@@ -161,6 +162,7 @@
   }
 
   .texture-paper::before,
+  .music-player-btn::before,
   #projects::before,
   #certifications::before,
   #memories::before,
@@ -175,9 +177,11 @@
     z-index: 0;
     filter: blur(0.3px);
     mix-blend-mode: multiply;
+    border-radius: inherit;
   }
 
   .texture-paper>*,
+  .music-player-btn>*,
   #projects>*,
   #certifications>*,
   #memories>*,

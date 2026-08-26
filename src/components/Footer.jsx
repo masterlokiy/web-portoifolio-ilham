@@ -30,19 +30,19 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative z-10 w-full bg-[#f5f4f1] border-t border-[#e5e1d7] py-8 md:py-10">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-12 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
+    <footer className="relative z-10 w-full bg-[#f5f4f1] border-t border-[#e5e1d7] py-6 sm:py-8 md:py-10">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-12 sm:pr-20 md:pr-24 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-6">
         <div className="text-center sm:text-left">
-          <p className="text-xs md:text-sm text-[#777777] font-medium">
-            ©{currentYear}
+          <p className="text-[11px] sm:text-xs md:text-sm text-[#777777] font-medium">
+            © {currentYear}
           </p>
         </div>
 
-        <div className="flex flex-col items-center sm:items-end gap-2">
-          <span className="text-xs sm:text-sm font-medium text-[#777777]">
+        <div className="flex flex-col items-center sm:items-end gap-1.5 sm:gap-2">
+          <span className="text-[11px] sm:text-xs md:text-sm font-medium text-[#777777]">
             Let&apos;s connect
           </span>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2">
             {socialLinks.map((social) => (
               <a
                 key={social.name}
@@ -50,7 +50,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.name}
-                className="cursor-pointer flex h-8.5 w-8.5 items-center justify-center rounded-full bg-white border border-[#dedbd4] p-2 shadow-xs transition-all duration-200 hover:border-[#fc731f] hover:scale-110"
+                className="cursor-pointer flex h-7.5 w-7.5 sm:h-8 sm:w-8 md:h-8.5 md:w-8.5 items-center justify-center rounded-full bg-white border border-[#dedbd4] p-1.5 sm:p-2 shadow-xs transition-all duration-200 hover:border-[#fc731f] hover:scale-110"
               >
                 <img
                   src={social.icon}

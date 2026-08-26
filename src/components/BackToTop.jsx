@@ -59,7 +59,7 @@ const BackToTop = () => {
     <button
       onClick={scrollToTop}
       aria-label="Back to top"
-      className={`fixed bottom-6 right-6 md:bottom-8 md:right-8 z-40 flex items-center justify-center w-11 h-11 md:w-12 md:h-12 rounded-full bg-white/95 backdrop-blur-md border border-[#dedbd4] shadow-[0_4px_16px_rgba(0,0,0,0.08)] transition-all duration-300 hover:border-[#fc731f] hover:shadow-[0_8px_24px_rgba(252,115,31,0.22)] hover:scale-110 select-none cursor-pointer group ${
+      className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 z-40 flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-white/95 backdrop-blur-md border border-[#dedbd4] shadow-[0_4px_16px_rgba(0,0,0,0.08)] transition-all duration-300 hover:border-[#fc731f] hover:shadow-[0_8px_24px_rgba(252,115,31,0.22)] hover:scale-110 select-none cursor-pointer group ${
         isVisible
           ? "opacity-100 translate-y-0 pointer-events-auto"
           : "opacity-0 translate-y-4 pointer-events-none"
@@ -91,7 +91,7 @@ const BackToTop = () => {
         />
       </svg>
 
-      <FiArrowUp className="relative z-10 w-4 h-4 md:w-5 md:h-5 text-[#444444] transition-all duration-200 group-hover:text-[#fc731f] group-hover:-translate-y-0.5" />
+      <FiArrowUp className="relative z-10 w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-[#444444] transition-all duration-200 group-hover:text-[#fc731f] group-hover:-translate-y-0.5" />
     </button>
   );
 };
