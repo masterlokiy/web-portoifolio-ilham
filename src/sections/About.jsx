@@ -79,11 +79,11 @@ const About = () => {
 
   return (
     <section ref={aboutRef} id="about" className="relative z-10 w-full overflow-hidden">
-      <div className="relative z-10 -mb-2 w-full overflow-hidden leading-0 select-none pointer-events-none">
+      <div className="relative z-10 -mb-1 sm:-mb-2 w-full overflow-hidden leading-0 select-none pointer-events-none">
         <img
           src={paperTornBorder}
           alt=""
-          className="block w-[106%] max-w-none -ml-[3%] brightness-0 invert h-auto"
+          className="block w-full h-10 sm:h-14 md:h-20 lg:h-auto max-w-none md:w-[106%] md:-ml-[3%] brightness-0 invert object-cover object-bottom md:object-fill"
         />
       </div>
 
@@ -274,11 +274,11 @@ const About = () => {
         </div>
       </div>
 
-      <div className="relative z-10 -mt-2 w-full overflow-hidden leading-0 bg-[#f5f4f1] select-none pointer-events-none">
+      <div className="relative z-10 -mt-1 sm:-mt-2 w-full overflow-hidden leading-0 bg-[#f5f4f1] select-none pointer-events-none">
         <img
           src={paperTornBorder}
           alt=""
-          className="block w-[106%] max-w-none -ml-[3%] brightness-0 invert h-auto rotate-180"
+          className="block w-full h-10 sm:h-14 md:h-20 lg:h-auto max-w-none md:w-[106%] md:-ml-[3%] brightness-0 invert object-cover object-bottom md:object-fill rotate-180"
         />
       </div>
     </section>
