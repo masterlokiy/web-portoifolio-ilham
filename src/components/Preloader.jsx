@@ -11,7 +11,7 @@ const Preloader = ({ onFinish }) => {
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
-    const totalDuration = 2200; 
+    const totalDuration = 2200;
     const startTime = performance.now();
     let rafId = null;
 
@@ -114,7 +114,7 @@ const Preloader = ({ onFinish }) => {
                 src={logoIcon}
                 alt="HW Logo"
                 className={`w-full h-full object-contain transition-all duration-500 ${isFilled
-                  ? "scale-105 drop-shadow-[0_0_24px_rgba(252,115,31,0.45)]"
+                  ? "scale-105"
                   : "scale-100"
                   }`}
               />
