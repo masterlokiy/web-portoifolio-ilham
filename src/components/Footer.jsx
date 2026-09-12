@@ -9,7 +9,7 @@ const Footer = () => {
   const socialLinks = [
     {
       name: "Gmail",
-      url: "mailto:icahyosw@gmail.com",
+      url: "mailto:ilhamcsw.work@gmail.com",
       icon: gmailIcon,
     },
     {
