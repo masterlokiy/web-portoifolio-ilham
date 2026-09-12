@@ -25,7 +25,7 @@ const projects = [
   {
     id: "02",
     year: "2025 – 2026",
-    title: "Potato Leaf Disease Detection Using Data-Centric AI and YOLOv12",
+    title: "Application of Data-Centric AI to Improve Potato Leaf Disease Detection Performance Using YOLOv12",
     category: "Thesis",
     period: "Sep 2025 – July 2026",
     tags: ["data", "ai"],
