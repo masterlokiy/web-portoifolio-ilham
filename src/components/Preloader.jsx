@@ -1,61 +1,98 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import logoIcon from "@assets/images/logo/logo.ico";
+import transparentTexture from "@assets/images/texture/Transparent-Texture.webp";
 
-const Preloader = ({ onFinish }) => {
-  const [progress, setProgress] = useState(0);
+function easeInOutCubic(x) {
+  return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+}
+
+const Preloader = ({ onFinish, progress = 0, isReady = false }) => {
+  const [internalProgress, setInternalProgress] = useState(0);
   const [isFilled, setIsFilled] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
   const [isDone, setIsDone] = useState(false);
 
+  // Lock scroll while preloader is active
   useEffect(() => {
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
-    const totalDuration = 2200;
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, []);
+
+  // Determine current display progress (high precision float)
+  const currentProgress =
+    typeof progress === "number" && progress > 0 ? progress : internalProgress;
+
+  // Standalone fallback in case props are not passed
+  useEffect(() => {
+    if (typeof progress === "number" && progress > 0) return;
+
+    const totalDuration = 2600;
     const startTime = performance.now();
     let rafId = null;
+    let currentDisplay = 0;
 
     const loop = (now) => {
       const elapsed = now - startTime;
       const t = Math.min(elapsed / totalDuration, 1);
+      const target = easeInOutCubic(t) * 100;
 
-      const currentProg = Math.round(
-        t < 0.7 ? (t / 0.7) * 75 : 75 + Math.pow((t - 0.7) / 0.3, 1.2) * 25
-      );
-
-      const cappedProg = Math.min(currentProg, 100);
-      setProgress(cappedProg);
-
-      if (cappedProg >= 99) {
-        setIsFilled(true);
+      const diff = target - currentDisplay;
+      if (diff > 0.02) {
+        currentDisplay += diff * 0.085;
+      } else if (target >= 100) {
+        currentDisplay = 100;
       }
 
-      if (t < 1) {
+      const clamped = Math.min(100, Math.max(0, currentDisplay));
+      setInternalProgress(clamped);
+
+      if (clamped < 99.8 || t < 1) {
         rafId = requestAnimationFrame(loop);
       } else {
-        setProgress(100);
-        setIsFilled(true);
-
-        setTimeout(() => {
-          setIsExiting(true);
-          setTimeout(() => {
-            setIsDone(true);
-            document.body.style.overflow = originalOverflow;
-            if (onFinish) onFinish();
-          }, 950);
-        }, 400);
+        setInternalProgress(100);
       }
     };
 
     rafId = requestAnimationFrame(loop);
-
     return () => {
       if (rafId) cancelAnimationFrame(rafId);
-      document.body.style.overflow = originalOverflow;
     };
-  }, [onFinish]);
+  }, [progress]);
+
+  // Logo fill check (trigger soft scale animation when nearly 100%)
+  useEffect(() => {
+    if (currentProgress >= 99.5) {
+      setIsFilled(true);
+    }
+  }, [currentProgress]);
+
+  // Trigger exit when asset preloading is 100% ready
+  useEffect(() => {
+    if (isReady || (currentProgress >= 99.9 && !progress)) {
+      setIsFilled(true);
+      const exitTimer = setTimeout(() => {
+        setIsExiting(true);
+        const doneTimer = setTimeout(() => {
+          setIsDone(true);
+          document.body.style.overflow = "";
+          if (onFinish) onFinish();
+        }, 950);
+
+        return () => clearTimeout(doneTimer);
+      }, 450);
+
+      return () => clearTimeout(exitTimer);
+    }
+  }, [isReady, currentProgress, progress, onFinish]);
 
   if (isDone) return null;
+
+  // High-precision subpixel clipping
+  const insetPercentage = Math.max(0, Math.min(100, 100 - currentProgress)).toFixed(2);
 
   return (
     <aside
@@ -73,7 +110,7 @@ const Preloader = ({ onFinish }) => {
         <div
           className="absolute inset-0 pointer-events-none opacity-90 mix-blend-multiply"
           style={{
-            backgroundImage: `url('/assets/images/texture/Transparent-Texture.webp')`,
+            backgroundImage: `url(${transparentTexture})`,
             filter: "blur(0.3px)",
           }}
         />
@@ -87,6 +124,7 @@ const Preloader = ({ onFinish }) => {
           }}
         >
           <div className="relative w-44 h-44 sm:w-56 sm:h-56 md:w-64 md:h-64 flex items-center justify-center select-none">
+            {/* Background subtle ghost logo */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20 grayscale brightness-75 select-none">
               <img
                 src={logoIcon}
@@ -95,20 +133,20 @@ const Preloader = ({ onFinish }) => {
               />
             </div>
 
+            {/* Silky-smooth filled logo with sub-pixel clip path */}
             <div
-              className="absolute inset-0 flex items-center justify-center pointer-events-none select-none transition-all duration-75 ease-out"
+              className="absolute inset-0 flex items-center justify-center pointer-events-none select-none will-change-[clip-path]"
               style={{
-                clipPath: `inset(${100 - progress}% 0 0 0)`,
-                WebkitClipPath: `inset(${100 - progress}% 0 0 0)`,
+                clipPath: `inset(${insetPercentage}% 0 0 0)`,
+                WebkitClipPath: `inset(${insetPercentage}% 0 0 0)`,
               }}
             >
               <img
                 src={logoIcon}
                 alt="HW Logo"
-                className={`w-full h-full object-contain transition-all duration-500 ${isFilled
-                  ? "scale-105"
-                  : "scale-100"
-                  }`}
+                className={`w-full h-full object-contain transition-transform duration-700 ease-out ${
+                  isFilled ? "scale-105" : "scale-100"
+                }`}
               />
             </div>
           </div>

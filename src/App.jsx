@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useMemo } from "react";
 import Lenis from "lenis";
 
 import Preloader from "./components/Preloader";
@@ -9,10 +9,29 @@ import Project from "./sections/Project";
 import PhotoMarquee from "./components/PhotoMarquee";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop";
+import useAssetPreloader from "./hooks/useAssetPreloader";
+
+import heroVideo from "@assets/video/sherlockholmes.webm";
+
+// Collect all critical image assets in the application for preloading & memory decoding
+const allAppImages = Object.values(
+  import.meta.glob(
+    "../assets/images/**/*.{jpg,jpeg,png,webp,svg,ico}",
+    { eager: true, query: "?url", import: "default" }
+  )
+);
+const allAppVideos = [heroVideo];
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const lenisRef = useRef(null);
+
+  // Real asset preloader: loads & decodes fonts, images, and video in memory
+  const { progress, isReady } = useAssetPreloader({
+    images: allAppImages,
+    videos: allAppVideos,
+    minDuration: 2600,
+  });
 
   useEffect(() => {
     document.documentElement.classList.remove("night-mode");
@@ -75,7 +94,11 @@ function App() {
 
   return (
     <main>
-      <Preloader onFinish={handlePreloaderFinish} />
+      <Preloader
+        progress={progress}
+        isReady={isReady}
+        onFinish={handlePreloaderFinish}
+      />
       <Navbar />
       <div className="relative">
         <Hero />
@@ -90,4 +113,3 @@ function App() {
 }
 
 export default App;
-

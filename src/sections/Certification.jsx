@@ -34,7 +34,7 @@ const Certification = () => {
                   src={cert.image}
                   alt={cert.title}
                   className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110 pointer-events-none select-none"
-                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </a>
